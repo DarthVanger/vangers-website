@@ -1,5 +1,5 @@
 import { MusicPlayer } from './MusicPlayer/MusicPlayer.js';
-import { VangersHome } from './VangersHome/VangersHome.js';
+import { Home } from './Home/Home.js';
 import { NotFound } from './NotFound/NotFound.js';
 import { Chapter } from './Chapter/Chapter.js';
 import { chapterRepository } from './chapters/chapterRepository.js';
@@ -36,7 +36,7 @@ export const App = () => {
 
     if (route === '#/') {
       console.info('App: show home page');
-      currentPage = VangersHome();
+      currentPage = Home();
       element.append(currentPage);
       return;
     }

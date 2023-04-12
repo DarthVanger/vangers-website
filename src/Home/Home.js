@@ -1,6 +1,6 @@
 import { ChapterList } from '../ChapterList/ChapterList.js';
 
-export const VangersHome = () => {
+export const Home = () => {
   const element = document.createElement('div');
   element.id = 'vangers-home';
 
