@@ -9,14 +9,21 @@ import { chapterSpace } from './chapters/chapterSpace.js';
 export const App = () => {
   const element = document.createElement('div');
   element.id = 'vangers';
-  let currentPage;
 
-  window.addEventListener('hashchange', handleHashChange);
+  let currentPage;
 
   element.append(MusicPlayer());
 
   const route = location.hash || '#/';
   showPage(route);
+
+  window.addEventListener('hashchange', handleHashChange);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'q') {
+      location.hash = '#/';
+    }
+  });
 
   function handleHashChange() {
     console.info('App: handle URL hash change: ', location.hash);
