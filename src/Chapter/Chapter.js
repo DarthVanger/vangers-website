@@ -9,6 +9,10 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   hintElement.id = 'hint';
   element.append(hintElement);
 
+  const codeElement = document.createElement('div');
+  codeElement.id = 'code';
+  element.append(codeElement);
+
   async function nextStep() {
     nextStepBtn.classList.add('push');
     setTimeout(() => { nextStepBtn.classList.remove('push') }, 4000);
@@ -29,16 +33,31 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   };
 
   function showStep(s) {
-    messageElement.innerHTML = '';
     console.info('Chapter: Show step:', s);
-    const paragraph = steps[s].text;
-    if (paragraph?.type == 'image') {
+
+    messageElement.innerHTML = '';
+    stepImageContainer.innerHTML = '';
+    codeElement.innerHTML = '';
+
+    const step = steps[s];
+
+    if (step.text) {
+      messageElement.innerHTML = step.text;
+    }
+
+    if (step.img) {
       const img = document.createElement('img');
-      img.className = 'vangers-img';
-      img.src = paragraph.src;
-      messageElement.append(img);
+      img.src = step.img;
+      stepImageContainer.append(img);
     } else {
-      messageElement.innerHTML = paragraph;
+    }
+
+    if (step.code) {
+      console.log('est code');
+      codeElement.innerHTML = `
+        <pre><code>
+          ${step.code}
+        </code></pre>`
     }
 
     video.play();
@@ -76,6 +95,10 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   messageElement.innerHTML = steps[step].text;
   messagePanel.append(messageElement);
   element.append(messagePanel);
+
+  const stepImageContainer = document.createElement('div');
+  stepImageContainer.id = 'step-image-container';
+  element.append(stepImageContainer);
 
   const nextStepBtn = document.createElement('img');
   nextStepBtn.src = 'assets/next-button.png';

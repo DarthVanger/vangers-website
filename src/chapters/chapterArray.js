@@ -14,6 +14,13 @@ const steps = [
   {
     text: `<code>particles.forEach(printParticle);</code>. Это одна строка кода. Теперь опредделяем Фукцею <code>function printParticle(p) { document.body.innerHTML += p }</code>. Этот Код выведе в ДокУмент Каждую Частицу &mdash; Каждый Элемент Моссива.
     `,
+    code: `
+      particles.forEach(printParticle);
+
+      function printParticle(p) {
+        document.body.innerHTML += p;
+      }
+    `
   },
   {
   text: `
@@ -26,7 +33,7 @@ const steps = [
     `,
   },
   {
-    image: '/img/vangers/geometria-renato.png',
+    img: '/assets/chapterArray/geometria-renato.png',
   },
   {
     text: `Моссив наш <code>particles</code> теперь будет набором Объиектов! Для ночала создадим два Объиекта. <code>let mars = { x: 100, y: 100 };</code> и <code>let sun = { x: 0, y: 500 }</code>.
