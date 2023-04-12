@@ -1,7 +1,7 @@
 # Vangers
 Gamified tutorial for creating a javascript game with physics.
 
-![Game screenshot](readme-img/vangers-screenshot-1.png)
+![Game screenshot](readme-img/vangers-demo.gif)
 
 ## Website
 [https://darthvanger.github.io/vangers-website](https://darthvanger.github.io/vangers-website)
