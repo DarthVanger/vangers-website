@@ -46,5 +46,5 @@ export const playlist = [
 ];
 
 playlist.forEach(track => {
-  track.path = '/assets/music/' + track.path;
+  track.path = 'assets/music/' + track.path;
 });
