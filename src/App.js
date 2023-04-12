@@ -3,6 +3,7 @@ import { NotFound } from './NotFound/NotFound.js';
 import { Chapter } from './Chapter/Chapter.js';
 import { chapterRepository } from './chapters/chapterRepository.js';
 import { chapterArray } from './chapters/chapterArray.js';
+import { MusicPlayer } from './MusicPlayer/MusicPlayer.js';
 
 export const App = () => {
   const element = document.createElement('div');
@@ -10,6 +11,8 @@ export const App = () => {
   let currentPage;
 
   window.addEventListener('hashchange', handleHashChange);
+
+  element.append(MusicPlayer());
 
   const route = location.hash || '#/';
   showPage(route);
