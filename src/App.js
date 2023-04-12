@@ -1,7 +1,8 @@
-import { chapterRepository } from './chapters/chapterRepository.js';
 import { VangersHome } from './VangersHome/VangersHome.js';
-import { Chapter } from './Chapter/Chapter.js';
 import { NotFound } from './NotFound/NotFound.js';
+import { Chapter } from './Chapter/Chapter.js';
+import { chapterRepository } from './chapters/chapterRepository.js';
+import { chapterArray } from './chapters/chapterArray.js';
 
 export const App = () => {
   const element = document.createElement('div');
@@ -32,6 +33,13 @@ export const App = () => {
     if (route === '#/chapter/repository') {
       console.info('App: show chapter "Create Repo"');
       currentPage = Chapter({ chapter: chapterRepository });
+      element.append(currentPage);
+      return;
+    }
+
+    if (route === '#/chapter/array') {
+      console.info('App: show chapter "Create Repo"');
+      currentPage = Chapter({ chapter: chapterArray });
       element.append(currentPage);
       return;
     }
