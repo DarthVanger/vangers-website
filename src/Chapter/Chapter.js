@@ -7,6 +7,7 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
 
   const hintElement = document.createElement('div');
   hintElement.id = 'hint';
+  hintElement.innerHTML = 'A tyt nixy9';
   element.append(hintElement);
 
   const codeElement = document.createElement('div');

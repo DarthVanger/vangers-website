@@ -16,6 +16,15 @@
   text-align: center;
 }
 
+#chapter #hint {
+  opacity: 0;
+}
+
+#chapter #hint:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+
 #chapter #message-panel {
   position: absolute;
   top: 10.5%;
