@@ -31,7 +31,7 @@ Each component returns `HTMLElement`.
 `App` component is also responsible for showing different pages based on `location.hash`.
 
 ### Folder Structure
-```
+```bash
 .
 ├── README.md
 ├── index.html # Main html file, all the other pages are in javascript
