@@ -1,5 +1,5 @@
 const id = 'array';
-const title = "Chapter Два &mdash; ХуерТа.";
+const title = 'Chapter Два &mdash; ХуерТа.';
 
 const steps = [
   {

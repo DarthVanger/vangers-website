@@ -1,9 +1,10 @@
+import { MusicPlayer } from './MusicPlayer/MusicPlayer.js';
 import { VangersHome } from './VangersHome/VangersHome.js';
 import { NotFound } from './NotFound/NotFound.js';
 import { Chapter } from './Chapter/Chapter.js';
 import { chapterRepository } from './chapters/chapterRepository.js';
 import { chapterArray } from './chapters/chapterArray.js';
-import { MusicPlayer } from './MusicPlayer/MusicPlayer.js';
+import { chapterSpace } from './chapters/chapterSpace.js';
 
 export const App = () => {
   const element = document.createElement('div');
@@ -34,15 +35,22 @@ export const App = () => {
     }
 
     if (route === '#/chapter/repository') {
-      console.info('App: show chapter "Create Repo"');
+      console.info('App: show chapter "repository"');
       currentPage = Chapter({ chapter: chapterRepository });
       element.append(currentPage);
       return;
     }
 
     if (route === '#/chapter/array') {
-      console.info('App: show chapter "Create Repo"');
+      console.info('App: show chapter "array"');
       currentPage = Chapter({ chapter: chapterArray });
+      element.append(currentPage);
+      return;
+    }
+
+    if (route === '#/chapter/space') {
+      console.info('App: show chapter "space"');
+      currentPage = Chapter({ chapter: chapterSpace });
       element.append(currentPage);
       return;
     }
