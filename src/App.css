@@ -1,0 +1,6 @@
+@import 'Chapter/Chapter.css';
+@import 'ChapterList/ChapterList.css';
+
+body {
+  overflow: hidden;
+}
