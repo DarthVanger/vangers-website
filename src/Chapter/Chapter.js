@@ -45,14 +45,14 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   }
 
   const backgroundImg = document.createElement('img');
-  backgroundImg.src = '/assets/fostral.jpg';
+  backgroundImg.src = 'assets/fostral.jpg';
   backgroundImg.id = 'background-img';
   element.append(backgroundImg);
 
   const videoContainer = document.createElement('div');
   videoContainer.id = 'video-container';
   const video = document.createElement('video');
-  video.src = '/assets/fostral.mp4';
+  video.src = 'assets/fostral.mp4';
   video.volume = 1;
   videoContainer.append(video);
   element.append(videoContainer);
@@ -78,13 +78,13 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   element.append(messagePanel);
 
   const nextStepBtn = document.createElement('img');
-  nextStepBtn.src = '/assets/next-button.png';
+  nextStepBtn.src = 'assets/next-button.png';
   nextStepBtn.id = 'next-step-img';
   nextStepBtn.addEventListener('click', nextStep);
   element.append(nextStepBtn);
 
   const prevStepBtn = document.createElement('img');
-  prevStepBtn.src = '/assets/prev-button.png';
+  prevStepBtn.src = 'assets/prev-button.png';
   prevStepBtn.id = 'prev-step-img';
   prevStepBtn.addEventListener('click', prevStep);
   element.append(prevStepBtn);
