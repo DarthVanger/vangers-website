@@ -13,22 +13,29 @@ npx http-server .
 ```
 
 ## How to add new Chapter
+### Create the chapter file
 Create `src/chapters/chapterSomething.js` file by analogy with other chapters in the `src/chapters` folder.
+
+Take a look at [chapterRepository.js](https://github.com/DarthVanger/vangers-website/blob/master/src/chapters/chapterRepository.js), for example - use it as a template for your new Chapter.
 
 Each chapter should have:
 * `id` - chapter id for the link, without spaces
 * `title` - chapter title for the chapter list - any text
 * `steps` - array of objects. Each step object may contain:
-  * `text` - text to show in the top panel of the Chapter
-  * `code` - code to show at the bottom of the screen
-  * `img` - image to show for this step instead of text and code
+  * [optional] `text` - text to show in the top panel of the Chapter
+  * [optional] `code` - code to show at the bottom of the screen
+  * [optional] `img` - image to show for this step instead of text and code
 
+### Add `if` inside src/App.js
 Open `src/App.js` file and find the `showPage()` function. Inside of it you need to add a new `if () {}`. Use the `id` you used for this chapter in the condition:
 ```
 if (route === '#/chapter/my_chapter_id') { ... }
 ```
 
 Inside the `if`, assign your chapter to the current page, by analogy with all the other chapters.
+
+### Add chapter to the `src/ChapterList/ChapterList.js` component
+In the `src/ChapterList/ChapterList.js` file add your new chapter, like all the other chapters.
 
 ## Framework
 There is no framework :)
