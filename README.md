@@ -26,6 +26,15 @@ Each chapter should have:
   * [optional] `code` - code to show at the bottom of the screen
   * [optional] `img` - image to show for this step instead of text and code
 
+The chapter file should `export` object containing all the variables listed above:
+```
+export chapterSometing = {
+  id,
+  title,
+  steps,
+};
+```
+
 #### Add `if` inside src/App.js
 Open `src/App.js` file and find the `showPage()` function. Inside of it you need to add a new `if () {}`. Use the `id` you used for this chapter in the condition:
 ```
