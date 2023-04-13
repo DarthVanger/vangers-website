@@ -5,6 +5,7 @@ import { Chapter } from './Chapter/Chapter.js';
 import { chapterRepository } from './chapters/chapterRepository.js';
 import { chapterArray } from './chapters/chapterArray.js';
 import { chapterSpace } from './chapters/chapterSpace.js';
+import { chapterTime } from './chapters/chapterTime.js';
 
 export const App = () => {
   const element = document.createElement('div');
@@ -58,6 +59,13 @@ export const App = () => {
     if (route === '#/chapter/space') {
       console.info('App: show chapter "space"');
       currentPage = Chapter({ chapter: chapterSpace });
+      element.append(currentPage);
+      return;
+    }
+
+    if (route === '#/chapter/time') {
+      console.info('App: show chapter "time"');
+      currentPage = Chapter({ chapter: chapterTime });
       element.append(currentPage);
       return;
     }
