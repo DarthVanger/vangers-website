@@ -55,7 +55,7 @@ Each component returns `HTMLElement`.
 ├── index.html # Main html file, all the other pages are in javascript
 ├── index.js # Main js file, which appends App component to document.body
 └── src
-    ├── App.css
+    ├── App.css # Main css file, it imports all the other css files
     ├── App.js # App - root component, it is appended to document.body
     ├── Chapter
     │   ├── Chapter.css
