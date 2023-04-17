@@ -65,6 +65,11 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
     wormFaceVideo.play();
   }
 
+  const backgroundImg = document.createElement('img');
+  backgroundImg.src = 'assets/vangers-background.png';
+  backgroundImg.id = 'background-img';
+  element.append(backgroundImg);
+
   const introVidDuration = 1000;
   const introVid = document.createElement('video');
   introVid.src = 'assets/intro.webm';
@@ -77,8 +82,10 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   wormFaceVideo.className = 'vangers-video';
   wormFaceVideo.muted = true;
   wormFaceVideo.src = 'assets/palec.webm';
+
   setTimeout(() => {
     element.append(wormFaceVideo);
+    introVid.remove();
   }, introVidDuration);
 
   // create an audio context and hook up the video element as the source
