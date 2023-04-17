@@ -4,7 +4,6 @@
 
 #chapter #message-panel,
 #chapter #hint {
-  z-index: 1;
   color: #99ae05;
   font-size: 1rem;
   height: 12%;
@@ -39,7 +38,6 @@
 #chapter #background-img,
 #chapter .vangers-video {
   position: absolute;
-  z-index: -1;
   height: 100vh;
   top: 0;
   left: 50%;

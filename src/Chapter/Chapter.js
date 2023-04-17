@@ -71,13 +71,24 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   backgroundImg.id = 'background-img';
   element.append(backgroundImg);
 
+  const messagePanel = document.createElement('article');
+  const messageElement = document.createElement('p');
+  messagePanel.id = 'message-panel';
+  messageElement.innerHTML = steps[step].text;
+  messagePanel.append(messageElement);
+  element.append(messagePanel);
+
+
   const introVidDuration = 1000;
   const introVid = document.createElement('video');
   introVid.src = 'assets/intro.webm';
   introVid.className = 'vangers-video';
   introVid.muted = true;
-  introVid.autoplay = true;
   element.append(introVid);
+
+  setTimeout(() => {
+    introVid.play();
+  }, 500);
 
   const wormFaceVideo = document.createElement('video');
   wormFaceVideo.className = 'vangers-video';
@@ -102,12 +113,6 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   // connect the gain node to an output destination
   gainNode.connect(audioCtx.destination);
 
-  const messagePanel = document.createElement('article');
-  const messageElement = document.createElement('p');
-  messagePanel.id = 'message-panel';
-  messageElement.innerHTML = steps[step].text;
-  messagePanel.append(messageElement);
-  element.append(messagePanel);
 
   const stepImageContainer = document.createElement('div');
   stepImageContainer.id = 'step-image-container';
