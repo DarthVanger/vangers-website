@@ -37,7 +37,7 @@
 }
 
 #chapter #background-img,
-#chapter #worm-face {
+#chapter .vangers-video {
   position: absolute;
   z-index: -1;
   height: 100vh;
@@ -48,14 +48,6 @@
 
 #chapter code {
   color: #d16407;
-}
-
-#chapter #intro-vid {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 100vh;
 }
 
 #chapter .push {

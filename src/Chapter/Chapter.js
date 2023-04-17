@@ -61,20 +61,25 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
       `;
     }
 
+    console.log('worm play');
     wormFaceVideo.play();
   }
 
-  const backgroundImg = document.createElement('img');
-  backgroundImg.src = 'assets/fostral.jpg';
-  backgroundImg.id = 'background-img';
-  element.append(backgroundImg);
+  const introVidDuration = 1000;
+  const introVid = document.createElement('video');
+  introVid.src = 'assets/intro.webm';
+  introVid.className = 'vangers-video';
+  introVid.muted = true;
+  introVid.autoplay = true;
+  element.append(introVid);
 
   const wormFaceVideo = document.createElement('video');
-  wormFaceVideo.id = 'worm-face';
-  wormFaceVideo.src = 'assets/palec.webm';
+  wormFaceVideo.className = 'vangers-video';
   wormFaceVideo.muted = true;
-  wormFaceVideo.volume = 1;
-  element.append(wormFaceVideo);
+  wormFaceVideo.src = 'assets/palec.webm';
+  setTimeout(() => {
+    element.append(wormFaceVideo);
+  }, introVidDuration);
 
   // create an audio context and hook up the video element as the source
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -87,7 +92,6 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
 
   // connect the gain node to an output destination
   gainNode.connect(audioCtx.destination);
-
 
   const messagePanel = document.createElement('article');
   const messageElement = document.createElement('p');
