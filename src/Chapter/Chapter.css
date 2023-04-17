@@ -36,7 +36,8 @@
   margin: 0;
 }
 
-#chapter #background-img {
+#chapter #background-img,
+#chapter #worm-face {
   position: absolute;
   z-index: -1;
   height: 100vh;
@@ -47,25 +48,6 @@
 
 #chapter code {
   color: #d16407;
-}
-
-#chapter #video-container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 44vw;
-  height: 64vh;
-  overflow: hidden;
-  text-align: center;
-}
-
-#chapter #video-container video {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  height: 100vh;
-  transform: translate(-50%, -50%);
 }
 
 #chapter #intro-vid {

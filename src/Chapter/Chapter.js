@@ -50,7 +50,6 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
       const img = document.createElement('img');
       img.src = step.img;
       stepImageContainer.append(img);
-    } else {
     }
 
     if (step.code) {
@@ -58,10 +57,11 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
       codeElement.innerHTML = `
         <pre><code>
           ${step.code}
-        </code></pre>`
+        </code></pre>
+      `;
     }
 
-    video.play();
+    wormFaceVideo.play();
   }
 
   const backgroundImg = document.createElement('img');
@@ -69,17 +69,16 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   backgroundImg.id = 'background-img';
   element.append(backgroundImg);
 
-  const videoContainer = document.createElement('div');
-  videoContainer.id = 'video-container';
-  const video = document.createElement('video');
-  video.src = 'assets/fostral.mp4';
-  video.volume = 1;
-  videoContainer.append(video);
-  element.append(videoContainer);
+  const wormFaceVideo = document.createElement('video');
+  wormFaceVideo.id = 'worm-face';
+  wormFaceVideo.src = 'assets/palec.webm';
+  wormFaceVideo.muted = true;
+  wormFaceVideo.volume = 1;
+  element.append(wormFaceVideo);
 
   // create an audio context and hook up the video element as the source
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  var source = audioCtx.createMediaElementSource(video);
+  var source = audioCtx.createMediaElementSource(wormFaceVideo);
 
   // create a gain node
   var gainNode = audioCtx.createGain();
