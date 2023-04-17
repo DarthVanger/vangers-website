@@ -33,7 +33,7 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
     showStep(step);
   };
 
-  function showStep(s) {
+  function showStep(s, { isInitialStep }) {
     console.info('Chapter: Show step:', s);
 
     messageElement.innerHTML = '';
@@ -61,8 +61,9 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
       `;
     }
 
-    console.log('worm play');
-    wormFaceVideo.play();
+    if (!isInitialStep) {
+      wormFaceVideo.play();
+    }
   }
 
   const backgroundImg = document.createElement('img');
@@ -85,6 +86,7 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
 
   setTimeout(() => {
     element.append(wormFaceVideo);
+    wormFaceVideo.play();
     introVid.remove();
   }, introVidDuration);
 
@@ -128,7 +130,7 @@ export const Chapter = ({ chapter, onChapterEnd }) => {
   hiddenHint.textContent = 'Тут мог быть твой дик пик...';
   element.append(hiddenHint)
 
-  showStep(step);
+  showStep(step, { isInitialStep : true });
 
   return element;
 };
